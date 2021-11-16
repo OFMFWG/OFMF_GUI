@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet"
+          href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script type="text/javascript" src="js/sjcl.js"></script>  
+<script type="text/javascript">  
+/*** SHA256 */  
+var bitArray = sjcl.hash.sha256.hash("Message");  
+var digest_sha256 = sjcl.codec.hex.fromBits(bitArray);   
+alert(digest_sha256);  
+</script> 
+<script>
+</script>
+  </head>
+  <body>
+      <h2>SHA256 Test</h2>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet"
+          href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="encode.js"></script>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+  <body onload="checkAddress()">
+    <div class="bg">
+      <h2>Open Fabrics Management Interface
+        <span style="float:right;padding-right:30px">
+        <img src="ofa_logo.png"
+             style="height:40px;margin-bottom:15px;padding-right:7px">
+        </span>
+      </h2>
+      <h4>an implementation for managing fabrics in a large scale system</h4>
+      <div class="page">
+        <div id="addrForm" style="display:none">
+          <div class="static-menu"></div>
+          <div class="content">
+            <div style="float:left; width:25%; min-width:430px">
+              <p style="padding-top:12px">
+                ofmf  <b>Management System </b>
+                operations </p>
+              <form id="loginForm" action="javascript:console.log('');">
+                <p class="innerform">
+                  IP Address:
+                  <input type="text" name="addr" value="1601e935-df86-42db-9dad-af2d28913f02.mock.pstmn.io"
+                    autocomplete="section-blue login addr"><br>
+                  Port Number:
+                  <input type="number" name="port" value="22345"
+                    autocomplete="section-blue login port"><br>
+                </p>
+                <input type="submit" value="SUBMIT">
+              </form>
+              <span id="loginMessage"><p><b>Please login</b></p></span>
+            </div>
+            <div style="float:left; width:50%">
+              <p style="padding-top:5px">
+              <p>
+              An <b>OFMF </b> is a management tool that is used to manage fabrics.
+              <p>
+              <p>The <b>Open Fabrics Managemenet </b> is an implementation 
+              <b>for Centralized management of fabrics</b></p>
+              <p><b>This tool:</b><p>
+              <ul>
+              <li><p>Lists the available fabrics in the large scale system</p>
+              <li><p>Configures the fabrics by talking with agent</p>
+              <li><p>Notifies when there are changes to the resource</p>
+              </ul>
+              <br>
+              <p style="font-size:9px;color:darkgrey;">
+The software is provided "AS IS", without warranty of any kind,
+express or implied, including but not limited to the warranties of
+merchantability, fitness for a particular purpose and
+noninfringement. In no event shall the authors or copyright holders
+be liable for any claim, damages or other liability, whether in an
+action of contract, tort or otherwise, arising from, out of or in
+connection with the software or the use or other dealings in the
+software.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="menu" style="display:none;">
+          <div class="static-menu">
+            <div class="dropdown-menu">
+              <button onclick="showDropdown('Info')" class="dropbtn">
+                Info</button>
+              <div id="Info" class="dropdown-content">
+                <a onclick="showContents('ofmf')">About</a>
+		<!-- raj         <a onclick="showSettings()">Settings</a> --!>
+                <a onclick="clearSession()">Logout</a>
+              </div>
+            </div>
+            <div class="dropdown-menu">
+              <button onclick="showDropdown('FabricsMenu')" class="dropbtn">
+                FabricsMenu</button>
+              <div id="FabricsMenu" class="dropdown-content">
+                <a onclick="showList('memorydomains')">Memdomains</a>
+                <a onclick="showList('systems')">Systems</a>
+                <a onclick="showList('connections')">Connections</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div id="addrCancelled" class="content" style="display:none;">
+          Unable to connect to the OFMF
+        </div>
+        <div id="contentPage" class="content" style="display:none;">
+          Disconnect from OFMF
+        </div>
+        <div id="listPage" class="content" style="display:none;">
+          Disconnect from OFMF
+        </div>
+        <div id="detailPage" class="content" style="display:none;">
+          Disconnect from OFMF
+        </div>
+        <div id="notSupported" class="content" style="display:none;">
+          Sorry, your browser does not support web storage...
+        </div>
+        <div id="editPage" class="overlay">
+          <a href="javascript:void(0)" class="closebtn"
+             onclick="closeDialog(false)">&#10008;</a>
+          <a href="javascript:void(0)" class="savebtn"
+             onclick="closeDialog(true)">&#10004;</a>
+          <div id="editForm" class="overlay-content"></div>
+        </div>
+	<div id="workspace">
+          <div id="objectType"></div>
+          <div id="objectValue"></div>
+          <div id="args"></div>
+          <div id="parentargs"></div>
+          <div id="post_err"></div>
+          <div id="editVerb"></div>
+          <div id="editUri"></div>
+          <div id="parentUri"></div>
+          <div id="renamedUri"></div>
+          <div id="renamed"></div>
+          <div id="filter"></div>
+          <div id="nslist"></div>
+          <div id="iflist"></div>
+	</div>
+        <div id="settingsPage" class="content" style="display:none;"></div>
+      </div>
+      <div class="footer">
+        version 0.1
+      </div>
+    </div>
+    <script src="forms.js"></script>
+  </body>
+</html>
